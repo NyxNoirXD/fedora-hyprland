@@ -48,7 +48,7 @@ user=$(whoami)
 v sudo gpasswd -d "$user" video || true
 v sudo gpasswd -d "$user" i2c || true
 v sudo gpasswd -d "$user" input || true
-v sudo rm /etc/modules-load.d/i2c-dev.conf
+v sudo rm /etc/modules-load.d/i2c-dev.conf || true
 
 ##############################################################################################################################
 read -p "Do you want to uninstall packages used by the dotfiles?\nCtrl+C to exit, or press Enter to proceed"
