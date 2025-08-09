@@ -45,9 +45,9 @@ v sudo rm -rf "$XDG_STATE_HOME/ags"
 # Undo Step 1: Remove added user from video, i2c, and input groups and remove yay packages
 printf '\e[36mRemoving user from video, i2c, and input groups and removing packages...\n\e[97m'
 user=$(whoami)
-v sudo gpasswd -d "$user" video
-v sudo gpasswd -d "$user" i2c
-v sudo gpasswd -d "$user" input
+v sudo gpasswd -d "$user" video || true
+v sudo gpasswd -d "$user" i2c || true
+v sudo gpasswd -d "$user" input || true
 v sudo rm /etc/modules-load.d/i2c-dev.conf
 
 ##############################################################################################################################
